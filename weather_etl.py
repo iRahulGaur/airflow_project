@@ -1,12 +1,10 @@
 import requests
 import csv
 from datetime import datetime
-import s3fs 
 from constaints import API_KEY
-import pandas as pd 
 
-LATITUDE = 33.8688
-LONGITUDE = 151.2093
+LATITUDE = 33.8688 #sydney
+LONGITUDE = 151.2093 #sydney
 
 def get_weather_data(lat, lon, api_key):
     weather_url = f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={api_key}&units=metric"
@@ -40,7 +38,7 @@ def get_air_quality(lat, lon, api_key):
     print("Failed to fetch air quality data.")
     return "N/A"
 
-def save_to_csv(data, filename="weather_data.csv"):
+def save_to_csv(data, filename="s3://rahul-weather-airflow-bucket/weather_data.csv"):
     headers = ["Location", "Time", "Temperature (C)", "Air Quality", "Humidity", "Wind Speed"]
     try:
         with open(filename, mode="a", newline="") as file:

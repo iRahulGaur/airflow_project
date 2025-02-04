@@ -1,8 +1,6 @@
-from datetime import timedelta
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
-from airflow.utils.dates import days_ago
-from datetime import datetime
+from datetime import datetime, timedelta
 from weather_etl import runWeather
 
 default_args = {
