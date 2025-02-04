@@ -1,7 +1,9 @@
 import requests
 import csv
-import datetime
+from datetime import datetime
+import s3fs 
 from constaints import API_KEY
+import pandas as pd 
 
 LATITUDE = 33.8688
 LONGITUDE = 151.2093
@@ -50,6 +52,7 @@ def save_to_csv(data, filename="weather_data.csv"):
     except Exception as e:
         print(f"Error saving data: {e}")
 
-weather_data = get_weather_data(LATITUDE, LONGITUDE, API_KEY)
-if weather_data:
-    save_to_csv(weather_data)
+def runWeather():
+    weather_data = get_weather_data(LATITUDE, LONGITUDE, API_KEY)
+    if weather_data:
+        save_to_csv(weather_data)
