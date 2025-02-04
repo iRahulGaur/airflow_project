@@ -69,6 +69,14 @@ Ensure you have the following installed:
   2. Save it as a CSV file
   3. Upload the CSV file to **AWS S3**
 
+## AWS Resources
+
+### EC2 Instance for Airflow
+![EC2 Instance](ec2-instance.png)
+
+### S3 Bucket for Weather Data
+![S3 Bucket](s3-bucket.png)
+
 ## Future Enhancements
 - Implement **data transformation** using Pandas
 - Store data in **AWS RDS or DynamoDB** for better querying
